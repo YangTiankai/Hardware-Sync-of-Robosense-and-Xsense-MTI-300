@@ -8,8 +8,8 @@ Robosense雷达和Xsense MTI-300的硬件时间同步方案
 1. 使得各个传感器的时间坐标的流速一致
 2. 得出各个传感器的时间坐标的差
 
-##准备工作：
-###MTI-300的硬件接口和时间同步方法
+## 准备工作：
+### MTI-300的硬件接口和时间同步方法
 
 MTI-300的接口如下图，其中GND、USB-DP、USB-DM、Vin应当转为USB2.0接口接入电脑，RS232两个引脚不使用，ClockSync、SyncOut、SyncIn为硬件时间同步引脚
 ![MTI-300接口线序](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/MTI-300.PNG)
@@ -25,15 +25,15 @@ https://base.xsens.com/hc/en-us/articles/208595729-ClockSync-and-StartSampling
 MTI-300的SyncOut功能的官网说明如下，可以将其配置为特定频率的脉冲输出
 https://base.xsens.com/hc/en-us/articles/211592185-Synchronization-with-the-MTi
 
-###Robosense激光雷达的时间同步接口
+### Robosense激光雷达的时间同步接口
 ![Robosense GPS同步接口](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/LidarGPS.PNG)
 该接口是用于将GPS收到的UTC时间同步为雷达内部的时间
 PPS引脚检测的是一个1Hz的方波，每当上升沿到来后，应当向Robosense雷达GPS接口的串口接收RXD引脚发送一个串口包，该串口包是模拟GPS设备的GPRMC规范
 ![GPS设备的GPRMC规范](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/GPRMC.PNG)
 
 
-##系统工作流程
-###MTI-300的时钟输出
+## 系统工作流程
+### MTI-300的时钟输出
 MTI-300的硬件时间同步方法在官网有说明
 
 https://base.xsens.com/hc/en-us/articles/211592185
