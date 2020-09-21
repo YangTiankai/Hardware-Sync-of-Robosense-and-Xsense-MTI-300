@@ -20,8 +20,11 @@ MTI-300官网上的硬件时间同步方法，我们只需要使用其中的部�
 https://base.xsens.com/hc/en-us/sections/201296842-Algorithms-Data
 
 MTI-300的StartSample功能的官网说明如下
+
 https://base.xsens.com/hc/en-us/articles/208595729-ClockSync-and-StartSampling
+
 当在上位机中将SyncIn配置为StartSample功能后，MTI-300上电后不会输出数据，直到在SyncIn上检测到一个上升沿
+
 我们的项目只需要加速度和角速度数据，根据文档和我们实际实验测试，StartSample后大约3ms后会有第一个数据包
 
 MTI-300的SyncOut功能的官网说明如下，可以将其配置为特定频率的脉冲输出
@@ -40,12 +43,16 @@ PPS引脚检测的是一个1Hz的方波，每当上升沿到来后，应当向Ro
 ![PCB原理图](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/PCB.PNG)
 
 将MTI-300的USB信号转为标准USB接口接入PC
+
 将MTI300的SyncIn引脚接入stm32的PA引脚
+
 将MTI-300的SyncOut引脚接入stm32单片机的PC4引脚和雷达GPS接口的PPS引脚
+
 将stm32的串口发送引脚PB10/USART3_TX接到雷达GPS接口的串口接收引脚TXD
 
 ## 上位机配置
 在上位机配置SyncIn引脚为StartSample功能
+
 在上位机配置MTI-300的SyncOut引脚为脉冲输出功能，将其配置为能够输出频率1Hz，脉宽200ms的矩形波
 
 
@@ -60,18 +67,28 @@ PPS引脚检测的是一个1Hz的方波，每当上升沿到来后，应当向Ro
 记stm32的时间轴为t_32，雷达的时间轴为t_li，IMU的时间轴为t_imu
 
 当stm32发出第一个脉冲时，设此时
+
 t_32 = T0
+
 t_imu = T1
 
+
 SyncOut上出现第一个上升沿时，设此时
+
 t_32 = T2
+
 t_li = T3
 
-可得
-t_li - t_32 = T3 - T2
-t_imu - t_32 = T1 - T0
 
 可得
+
+t_li - t_32 = T3 - T2
+
+t_imu - t_32 = T1 - T0
+
+
+可得
+
 t_li - t_imu = T3 - T1 - (T2 - T0)
 
 
