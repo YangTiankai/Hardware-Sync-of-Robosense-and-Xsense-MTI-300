@@ -29,7 +29,7 @@ https://base.xsens.com/hc/en-us/articles/211592185-Synchronization-with-the-MTi
 ![Robosense GPS同步接口](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/LidarGPS.PNG)
 该接口是用于将GPS收到的UTC时间同步为雷达内部的时间
 PPS引脚检测的是一个1Hz的方波，每当上升沿到来后，应当向Robosense雷达GPS接口的串口接收RXD引脚发送一个串口包，该串口包是模拟GPS设备的GPRMC规范
-
+![GPS设备的GPRMC规范](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/GPRMC.PNG)
 
 
 系统工作流程如下：
