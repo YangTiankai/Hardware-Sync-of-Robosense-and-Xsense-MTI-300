@@ -22,12 +22,15 @@ https://base.xsens.com/hc/en-us/articles/208595729-ClockSync-and-StartSampling
 当在上位机中将SyncIn配置为StartSample功能后，MTI-300上电后不会输出数据，直到在SyncIn上检测到一个上升沿
 我们的项目只需要加速度和角速度数据，根据文档和我们实际实验测试，StartSample后大约3ms后会有第一个数据包
 
-
-MTI-300的SyncOut功能的官网说明如下，可以将
+MTI-300的SyncOut功能的官网说明如下，可以将其配置为特定频率的脉冲输出
 https://base.xsens.com/hc/en-us/articles/211592185-Synchronization-with-the-MTi
 
-2. 
+2. Robosense激光雷达的时间同步接口
 ![Robosense GPS同步接口](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/LidarGPS.PNG)
+该接口是用于将GPS收到的UTC时间同步为雷达内部的时间
+PPS引脚检测的是一个1Hz的方波，每当上升沿到来后，应当向Robosense雷达GPS接口的串口接收RXD引脚发送一个串口包，该串口包是模拟GPS设备的GPRMC规范
+
+
 
 系统工作流程如下：
 1. MTI-300的时钟输出
@@ -40,7 +43,7 @@ https://base.xsens.com/hc/en-us/articles/211592185
 
 3. 将MTI-300的SyncOut引脚接到Robosense雷达的GPS接口的PPS引脚上
 
-4. 将MTI-300的SyncOut引脚接入stm32单片机的PC4引脚，每检测到一个上升沿脉冲，向Robosense雷达的GPS接口的串口接收RXD引脚发送一个串口包，该串口包是模拟GPS设备的GPRMC规范
+4. 将MTI-300的SyncOut引脚接入stm32单片机的PC4引脚，
 
 
 
