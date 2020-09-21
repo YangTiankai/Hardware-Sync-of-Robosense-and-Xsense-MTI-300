@@ -29,6 +29,7 @@
 **/*.hex
 
 **/*.ytk_106
+**/*.ytk
 
 JLinkLog.txt
 
