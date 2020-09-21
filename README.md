@@ -3,7 +3,7 @@ Robosense雷达和Xsense MTI-300的硬件时间同步方案
 
 本项目主要工作是进行了Robosense雷达和Xsense MTI-300的硬件时间同步
 
-![readmefile](LidarGPS.png)
+![Robosense GPS同步接口](/readmefile/LidarGPS.png)
 
 系统工作流程如下：
 1. MTI-300的时钟输出
