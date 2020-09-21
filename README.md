@@ -3,10 +3,12 @@ Robosense雷达和Xsense MTI-300的硬件时间同步方案
 
 本项目主要工作是进行了Robosense雷达和Xsense MTI-300的硬件时间同步
 
+![readmefile](LidarGPS.png)
 
 系统工作流程如下：
 1. MTI-300的时钟输出
 MTI-300的硬件时间同步方法在官网有说明
+
 https://base.xsens.com/hc/en-us/articles/211592185
 
 在上位机配置SyncIn引脚为StartSample功能，在上电后3秒后，使用stm32的PA6引脚向MTI-300的SyncIn引脚输入一个上升沿脉冲，此时MTI-300将向外输出数据
