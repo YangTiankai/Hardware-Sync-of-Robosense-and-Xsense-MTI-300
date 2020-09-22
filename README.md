@@ -10,6 +10,9 @@ Robosense雷达和Xsense MTI-300的硬件时间同步方案
 
 我们的工作是将IMU和Lidar的时间轴都向IMU对齐
 
+该项目使用了另一个STM32F405核心板，见  
+https://github.com/YangTiankai/STM32F4-Core-Board
+
 ## 传感器的硬件同步方法
 ### MTI-300的硬件接口和时间同步方法
 
