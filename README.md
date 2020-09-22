@@ -25,8 +25,8 @@
   当在上位机中将SyncIn配置为StartSample功能后，MTI-300上电后不会输出数据，直到在SyncIn上检测到一个上升沿
   我们的项目只需要加速度和角速度数据，根据文档和我们实际实验测试，StartSample后大约3ms后会有第一个数据包
 
-MTI-300的SyncOut功能的官网说明如下，可以将其配置为特定频率的脉冲输出
-https://base.xsens.com/hc/en-us/articles/211592185-Synchronization-with-the-MTi
+  MTI-300的SyncOut功能的官网说明如下，可以将其配置为特定频率的脉冲输出
+  https://base.xsens.com/hc/en-us/articles/211592185-Synchronization-with-the-MTi
 
 ### Robosense激光雷达的时间同步接口
 ![Robosense GPS同步接口](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/LidarGPS.PNG)
