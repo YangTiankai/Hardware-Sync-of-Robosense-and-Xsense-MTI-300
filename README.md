@@ -16,7 +16,7 @@
   MTI-300的接口如下图，其中GND、USB-DP、USB-DM、Vin应当转为USB2.0接口接入电脑，RS232两个引脚不使用，ClockSync、SyncOut、SyncIn为硬件时间同步引脚
   ![MTI-300接口线序](https://github.com/YangTiankai/Hardware-Sync-of-Robosense-and-Xsense-MTI-300/blob/master/readmefile/MTI-300.PNG)
 
-  MTI-300官网上的硬件时间同步方法，我们只需要使用其中的部分功能
+  MTI-300官网上的硬件时间同步方法，我们只需要使用其中的部分功能  
   https://base.xsens.com/hc/en-us/sections/201296842-Algorithms-Data
 
   MTI-300的StartSample功能的官网说明如下
